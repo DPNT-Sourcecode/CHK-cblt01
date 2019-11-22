@@ -30,7 +30,7 @@ def checkout(skus):
             return -1
 
         product_amounts[curr] += 1
-
+    print(product_amounts)
     for key in prod_list:
         if key == 'A':
             cost += (product_amounts['A'] // 5)*200 + ((product_amounts['A'] % 5)//3)*130 + ((product_amounts['A']%5)%3)*50
@@ -41,8 +41,9 @@ def checkout(skus):
             cost += product_amounts[key] * product_dict[key]
         else:
             cost += product_amounts[key] * product_dict[key]
+        print(cost)
 
-        
+
 
     return cost
 
@@ -51,6 +52,7 @@ if __name__ == '__main__':
     in1 = 'AAAAAA'
     out1 = checkout(in1)
     print(out1)
+
 
 
 
