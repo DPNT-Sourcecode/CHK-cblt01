@@ -9,4 +9,3 @@ def hello(friend_name):
 if __name__ == '__main__':
     out1 = hello('John')
     print(out1)
-
