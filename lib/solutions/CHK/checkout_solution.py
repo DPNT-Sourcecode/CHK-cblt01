@@ -44,15 +44,13 @@ def checkout(skus):
         else:
             cost += product_amounts[key] * product_dict[key]
 
-
-
-
     return cost
 
 
-if __name__ == '__main__':
-    in1 = 'A'
-    out1 = checkout(in1)
-    print(out1)
+#if __name__ == '__main__':
+#    in1 = 'ABCDE'
+#    out1 = checkout(in1)
+#    print(out1)
+
 
 
