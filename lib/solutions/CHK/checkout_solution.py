@@ -33,9 +33,12 @@ def checkout(skus):
         else:
             product_amounts[curr] += 1
             cost += product_dict[curr]
-    # raise NotImplementedError()
+
+    return cost
+
 
 if __name__ == '__main__':
-    in1 = 'ABCD'
+    in1 = 'AAA'
     out1 = checkout(in1)
     print(out1)
+
