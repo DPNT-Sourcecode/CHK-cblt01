@@ -20,6 +20,7 @@ def checkout(skus):
         'D': 0,
         'E': 0
     }
+
     for i in range(len(skus)):
 
         curr = skus[i]
@@ -30,7 +31,7 @@ def checkout(skus):
         if curr == 'A' and (product_amounts[curr]+1)%3 == 0:
             product_amounts[curr] += 1
             cost += 30
-        elif curr == 'B' and (product_amounts[curr]+1)%2 == 0:
+        elif curr == 'B' and (product_amounts[curr]+1)%2 == 0 and (product_amounts[curr]>0):
             product_amounts[curr] += 1
             cost += 15
         elif curr == 'E' and (product_amounts[curr]+1)%2 == 0:
@@ -46,9 +47,10 @@ def checkout(skus):
 
 
 if __name__ == '__main__':
-    in1 = 'EEB'
+    in1 = 'BEE'
     out1 = checkout(in1)
     print(out1)
+
 
 
 
