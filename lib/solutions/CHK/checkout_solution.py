@@ -98,7 +98,7 @@ def checkout(skus):
         else:
             product_amounts[curr] += 1
 
-    for key in 'ZYXWVUTSRQPONMLKJIHGFEDCBA':
+    for key in 'WVURQPONMLKJIHGFEDCBA':
 
         if key in special_offers1:
             val = product_amounts[key]
@@ -128,6 +128,10 @@ def checkout(skus):
             if val>=0:
                 cost += val*product_dict[key]
 
+    special_offer4_num = 0
+    for key in 'ZYTSX':
+
+
 
         ######
         # if key == 'A':
@@ -154,6 +158,7 @@ def checkout(skus):
 #    in1 = 'ABCDE'
 #    out1 = checkout(in1)
 #    print(out1)
+
 
 
 
