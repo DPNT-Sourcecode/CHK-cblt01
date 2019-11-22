@@ -102,19 +102,21 @@ def checkout(skus):
 
         if key in special_offers1:
             val = product_amounts[key]
-            offers = special_offers1[key]
-            #print(offers)
-            for i in range(len(offers)-1,-1,-1):
-                cost += (val // offers[i][0])*offers[i][1]
-                val = val % offers[i][0]
             if val>=0:
+                offers = special_offers1[key]
+                #print(offers)
+                for i in range(len(offers)-1,-1,-1):
+                    cost += (val // offers[i][0])*offers[i][1]
+                    val = val % offers[i][0]
+
                 cost += val*product_dict[key]
         elif key in special_offers2:
-            val = product_amounts[key]
-            offers = special_offers2[key]
-            cost += (val//(offers[0]+1)) * offers[0]*product_dict[key]
-            val = val%(offers[0]+1)
             if val>=0:
+                val = product_amounts[key]
+                offers = special_offers2[key]
+                cost += (val//(offers[0]+1)) * offers[0]*product_dict[key]
+                val = val%(offers[0]+1)
+
                 cost += val*product_dict[key]
         elif key in special_offers3:
             key_to_reduce = special_offers3[key][1]
@@ -152,4 +154,5 @@ def checkout(skus):
 #    in1 = 'ABCDE'
 #    out1 = checkout(in1)
 #    print(out1)
+
 
