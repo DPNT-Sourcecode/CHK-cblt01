@@ -20,6 +20,7 @@ def checkout(skus):
         'D': 0,
         'E': 0
     }
+    prod_list = ['A','C','D','E','B']
 
     for i in range(len(skus)):
 
@@ -28,25 +29,20 @@ def checkout(skus):
         if curr not in product_dict:
             return -1
 
-        if curr == 'A':
-            if (product_amounts[curr]+1)%3 == 0:
-                cost += 30
-            elif (product_amounts[curr]+1)%5 == 0:
-                cost +=20
-            else:
-                cost += product_dict[curr]
-            product_amounts[curr] += 1
-        elif curr == 'B' and (product_amounts[curr]+1)%2 == 0 and (product_amounts[curr]>0):
-            product_amounts[curr] += 1
-            cost += 15
-        elif curr == 'E' and (product_amounts[curr]+1)%2 == 0:
-            product_amounts[curr] += 1
-            # Add 40 for E, subtract 30 for B, therefore +10:
-            cost += 10
-            product_amounts['B'] -= 1
+        product_amounts[curr] += 1
+
+    for key in prod_list:
+        if key == 'A':
+            cost += (product_amounts['A'] // 5)*200 + ((product_amounts['A'] % 5)//3)*130 + ((product_amounts['A']%5)%3)*50
+        if key == 'B':
+            cost += (product_amounts['B'] // 2)*45 + (product_amounts['B'] % 2)*30
+        if key == 'E':
+            product_amounts['B'] -= product_amounts['E']//2
+            cost += product_amounts[key] * product_dict[key]
         else:
-            product_amounts[curr] += 1
-            cost += product_dict[curr]
+            cost += product_amounts[key] * product_dict[key]
+
+        
 
     return cost
 
@@ -55,5 +51,6 @@ if __name__ == '__main__':
     in1 = 'AAAAAA'
     out1 = checkout(in1)
     print(out1)
+
 
 
