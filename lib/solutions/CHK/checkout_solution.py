@@ -39,7 +39,7 @@ def checkout(skus):
         'H': ((5,45),(10,80)),
         'K': ((2,150),),
         'P': ((5,200),),
-        'Q': ((5,80),),
+        'Q': ((3,80),),
         'V': ((2,90),(3,130)),
     }
 
@@ -103,7 +103,7 @@ def checkout(skus):
         if key in special_offers1:
             val = product_amounts[key]
             offers = special_offers1[key]
-            print(offers)
+            #print(offers)
             for i in range(len(offers)-1,-1,-1):
                 cost += (val // offers[i][0])*offers[i][1]
                 val = val % offers[i][0]
@@ -152,6 +152,3 @@ def checkout(skus):
 #    in1 = 'ABCDE'
 #    out1 = checkout(in1)
 #    print(out1)
-
-
-
