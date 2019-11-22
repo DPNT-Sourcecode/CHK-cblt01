@@ -33,6 +33,8 @@ def checkout(skus):
                 cost += 30
             elif (product_amounts[curr]+1)%5 == 0:
                 cost +=20
+            else:
+                cost += product_dict[curr]
             product_amounts[curr] += 1
         elif curr == 'B' and (product_amounts[curr]+1)%2 == 0 and (product_amounts[curr]>0):
             product_amounts[curr] += 1
@@ -50,7 +52,8 @@ def checkout(skus):
 
 
 if __name__ == '__main__':
-    in1 = 'EEB'
+    in1 = 'AAAAAA'
     out1 = checkout(in1)
     print(out1)
+
 
