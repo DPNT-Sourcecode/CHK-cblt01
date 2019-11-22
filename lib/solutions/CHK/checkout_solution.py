@@ -45,6 +45,8 @@ def checkout(skus):
         elif key == 'E':
             product_amounts['B'] -= product_amounts['E']//2
             cost += product_amounts[key] * product_dict[key]
+        elif key == 'F':
+            cost += (product_amounts[key]//2 + product_amounts[key]%2) * product_dict[key]
         else:
             cost += product_amounts[key] * product_dict[key]
 
@@ -55,9 +57,3 @@ def checkout(skus):
 #    in1 = 'ABCDE'
 #    out1 = checkout(in1)
 #    print(out1)
-
-
-
-
-
-
