@@ -3,8 +3,10 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-    raise NotImplementedError()
+    return skus
+    # raise NotImplementedError()
 
 if __name__ == '__main__':
-    in1 =
+    out1 = checkout('a')
+
 
