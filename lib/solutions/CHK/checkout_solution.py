@@ -28,9 +28,12 @@ def checkout(skus):
         if curr not in product_dict:
             return -1
 
-        if curr == 'A' and (product_amounts[curr]+1)%3 == 0:
+        if curr == 'A':
+            if (product_amounts[curr]+1)%3 == 0:
+                cost += 30
+            elif (product_amounts[curr]+1)%5 == 0:
+                cost +=20
             product_amounts[curr] += 1
-            cost += 30
         elif curr == 'B' and (product_amounts[curr]+1)%2 == 0 and (product_amounts[curr]>0):
             product_amounts[curr] += 1
             cost += 15
@@ -50,3 +53,4 @@ if __name__ == '__main__':
     in1 = 'EEB'
     out1 = checkout(in1)
     print(out1)
+
