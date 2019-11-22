@@ -37,8 +37,9 @@ def checkout(skus):
     return cost
 
 
-if __name__ == '__main__':
-    in1 = 'AAA'
-    out1 = checkout(in1)
-    print(out1)
+#if __name__ == '__main__':
+#    in1 = 'AAA'
+#    out1 = checkout(in1)
+#    print(out1)
+
 
