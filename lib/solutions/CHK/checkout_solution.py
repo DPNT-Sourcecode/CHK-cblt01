@@ -47,9 +47,10 @@ def checkout(skus):
 
 
 if __name__ == '__main__':
-    in1 = 'BEE'
+    in1 = 'EEB'
     out1 = checkout(in1)
     print(out1)
+
 
 
 
