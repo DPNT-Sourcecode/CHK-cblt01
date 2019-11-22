@@ -131,11 +131,16 @@ def checkout(skus):
     special_offer4_num = 0
     for key in 'ZYTSX':
         special_offer4_num += product_amounts[key]
+    cost += (special_offer4_num // 3) * 45
+    rest = special_offer4_num % 3
+    #while rest > 0:
+    for key in 'XSTYZ':
+        curr = product_amounts[key]
+        if rest<=curr:
+            cost += product_dict[key] * rest
+            break
+        else:
+            cost += product_dict[key] * curr
+            rest -= curr
 
     return cost
-
-
-#if __name__ == '__main__':
-#    in1 = 'ABCDE'
-#    out1 = checkout(in1)
-#    print(out1)
