@@ -96,7 +96,7 @@ def checkout(skus):
         if curr not in product_amounts:
             product_amounts[curr] = 1
         else:
-            product_amounts += 1
+            product_amounts[curr] += 1
 
     for key in 'ZYXWVUTSRQPONMLKJHGFEDCBA':
 
@@ -127,22 +127,22 @@ def checkout(skus):
 
 
         ######
-        if key == 'A':
-            p1 = (product_amounts['A'] // 5)*200
-            p2 = ((product_amounts['A'] % 5)//3)*130
-            p3 = ((product_amounts['A']%5)%3)*50
-            cost += (p1+p2+p3)
-        elif key == 'B':
-            # cost += (product_amounts['B'] // 2)*45 + (product_amounts['B'] % 2)*30
-            if product_amounts['B'] >= 0:
-                cost += (product_amounts['B'] // 2)*45 + (product_amounts['B'] % 2)*30
-        elif key == 'E':
-            product_amounts['B'] -= product_amounts['E']//2
-            cost += product_amounts[key] * product_dict[key]
-        elif key == 'F':
-            cost += (product_amounts[key]//3)*20 + (product_amounts[key]%3) * 10
-        else:
-            cost += product_amounts[key] * product_dict[key]
+        # if key == 'A':
+        #     p1 = (product_amounts['A'] // 5)*200
+        #     p2 = ((product_amounts['A'] % 5)//3)*130
+        #     p3 = ((product_amounts['A']%5)%3)*50
+        #     cost += (p1+p2+p3)
+        # elif key == 'B':
+        #     # cost += (product_amounts['B'] // 2)*45 + (product_amounts['B'] % 2)*30
+        #     if product_amounts['B'] >= 0:
+        #         cost += (product_amounts['B'] // 2)*45 + (product_amounts['B'] % 2)*30
+        # elif key == 'E':
+        #     product_amounts['B'] -= product_amounts['E']//2
+        #     cost += product_amounts[key] * product_dict[key]
+        # elif key == 'F':
+        #     cost += (product_amounts[key]//3)*20 + (product_amounts[key]%3) * 10
+        # else:
+        #     cost += product_amounts[key] * product_dict[key]
 
     return cost
 
@@ -151,4 +151,5 @@ def checkout(skus):
 #    in1 = 'ABCDE'
 #    out1 = checkout(in1)
 #    print(out1)
+
 
