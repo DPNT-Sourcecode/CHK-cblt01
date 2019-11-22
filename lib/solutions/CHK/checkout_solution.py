@@ -139,8 +139,3 @@ def checkout(skus):
 #    in1 = 'ABCDE'
 #    out1 = checkout(in1)
 #    print(out1)
-
-
-
-
-
