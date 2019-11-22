@@ -22,13 +22,20 @@ def checkout(skus):
 
         if curr not in product_amounts:
             product_amounts[curr] = 1
+            cost += product_dict[curr]
+        elif curr == 'A' and (product_amounts[curr]+1)%3 == 0:
+            product_amounts[curr] += 1
+            cost += 30
+        elif curr == 'B' and (product_amounts[curr]+1)%2 == 0:
+            product_amounts[curr] += 1
+            cost += 15
+
         else:
             product_amounts[curr] += 1
+            cost += product_dict[curr]
     # raise NotImplementedError()
 
 if __name__ == '__main__':
     in1 = 'ABCD'
     out1 = checkout(in1)
-
-
-
+    print(out1)
